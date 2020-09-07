@@ -1,0 +1,22 @@
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+
+@import "base/reset";
+@import "base/normalize";
+@import "base/typography";
+@import "base/base";
+
+@import "layout/grid";
+
+@import "components/header";
+@import "components/aside";
+@import "components/slider";
+@import "components/buttons";
+@import "components/lists";
+@import "components/scroll-container";
+
+@import "components/advantages";
+
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@import "vendors/glide";

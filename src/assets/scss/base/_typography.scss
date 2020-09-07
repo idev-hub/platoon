@@ -1,0 +1,172 @@
+@font-face {
+    font-family: "Museo Sans";
+    font-weight: 100;
+    font-style: normal;
+    src: url("../../fonts/MuseoSansCyrl_100.otf") format("opentype");
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: "Museo Sans";
+    font-weight: 300;
+    font-style: normal;
+    src: url("../../fonts/MuseoSansCyrl_300.otf") format("opentype");
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: "Museo Sans";
+    font-weight: 500;
+    font-style: normal;
+    src: url("../../fonts/MuseoSansCyrl_500.otf") format("opentype");
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: "Museo Sans";
+    font-weight: 700;
+    font-style: normal;
+    src: url("../../fonts/MuseoSansCyrl_700.otf") format("opentype");
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: "Museo Sans";
+    font-weight: 900;
+    font-style: normal;
+    src: url("../../fonts/MuseoSansCyrl_900.otf") format("opentype");
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: "Proxima Nova";
+    font-weight: 900;
+    font-style: normal;
+    src: url("../../fonts/ProximaNova-Black.ttf") format("truetype");
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: "Proxima Nova";
+    font-weight: 300;
+    font-style: normal;
+    src: url("../../fonts/ProximaNova-Light.ttf") format("truetype");
+    font-display: fallback;
+}
+
+h3, h4, h5, h6, p, a, input, ::placeholder, ::after, ::before, textarea, button, span {
+    font-family: "Museo Sans", "Proxima Nova", Arial, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    text-transform: inherit;
+}
+
+h1, h2 {
+    font-family: "Proxima Nova", "Museo Sans", Arial, sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 3.7em;
+    line-height: 1em;
+    margin: 0 0 .5em 0;
+}
+
+span {
+    text-transform: inherit;
+}
+
+p{
+    font-size: 1em;
+    line-height: 3em;
+    &:not(:last-child){
+        margin-bottom: 2em;
+    }
+}
+
+b {
+    font-family: "Museo Sans", "Proxima Nova", Arial, sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    text-transform: inherit;
+}
+
+small {
+    font-family: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: .7em;
+    text-transform: inherit;
+}
+
+p, a {
+    font-size: 1em;
+    line-height: 1.3em;
+    text-transform: inherit;
+    color: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: .3s;
+    text-transform: inherit;
+    
+    &:hover {
+        opacity: .8;
+    }
+}
+
+.paragraph {
+    p {
+        line-height: 1.4em;
+        font-size: 1.2em;
+        color: inherit;
+    }
+}
+
+
+.text-span-color-red {
+    span {
+        color: #c32828;
+    }
+}
+
+.text-span-none {
+    span {
+        text-transform: none;
+    }
+}
+
+.text-span-bold {
+    span {
+        font-weight: bold;
+    }
+}
+
+.text-small-break {
+    small {
+        display: block;
+    }
+}
+
+.text-small-normal {
+    small {
+        font-weight: normal;
+    }
+}
+
+
+.text-right{
+    text-align: right;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.text-jusrify{
+    text-align: justify;
+}

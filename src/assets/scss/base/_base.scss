@@ -1,0 +1,49 @@
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-size: calc(4px + 10 * (100vw / 1920));
+    font-family: "Museo Sans", "Proxima Nova", serif;
+}
+
+img{
+    max-width: 100%;
+    user-select: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.color-red {
+    color: $color-red;
+}
+
+.color-gray{
+    color: #222;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-none {
+    text-transform: none;
+}
+
+
+.container {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 14em;
+}
+
+
+.shadow{
+    box-shadow: 0 0 12px rgba(0,0,0,.1);
+}

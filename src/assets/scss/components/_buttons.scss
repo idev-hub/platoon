@@ -1,0 +1,38 @@
+.btn {
+    text-decoration: none;
+    color: inherit;
+    background: none;
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15em;
+    height: 3em;
+    font-size: 1.2em;
+    font-weight: 700;
+    user-select: none;
+    
+    &.btn-secondary{
+        background: rgba($color-red, .1);
+        border-radius: 40px;
+        transition: .3s;
+        color: $color-red;
+        border: 1px solid $color-red;
+    
+        &:hover {
+            opacity: .8;
+        }
+    }
+    
+    &.btn-primary {
+        background: linear-gradient(#e62c2c, #971616);
+        border-radius: 40px;
+        transition: .3s;
+        color: #ffffff;
+        
+        &:hover {
+            opacity: .8;
+        }
+    }
+}

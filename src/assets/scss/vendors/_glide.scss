@@ -1,0 +1,23 @@
+.glide__bullets{
+    margin-top: 1em;
+    .glide__bullet{
+        background: $color-red;
+        opacity: .5;
+        width: 1em;
+        height: 1em;
+        padding: 0;
+        border-radius: 10em;
+        cursor: pointer;
+        border: .2em solid $color-red;
+        transition: .3s;
+        
+        &:not(:last-child){
+            margin-right: .5em;
+        }
+        
+        &.glide__bullet--active{
+            opacity: 1;
+            background: #fff;
+        }
+    }
+}

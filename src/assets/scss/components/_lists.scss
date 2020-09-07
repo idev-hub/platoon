@@ -1,0 +1,33 @@
+.list-flags{
+    ._item{
+        background: $color-red;
+        color: #fff;
+        min-height: 6em;
+        display: flex;
+        align-items: center;
+        padding: 1em 4em 1em 3em;
+        
+        font-weight: 900;
+        font-size: 1.2em;
+        line-height: 1.4em;
+        text-transform: uppercase;
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden;
+        
+        &:before{
+            content: '';
+            position: absolute;
+            background: #fff;
+            height: 80%;
+            top: 10%;
+            right: -3em;
+            width: 4em;
+            border-radius: 50%;
+        }
+        
+        &:nth-child(2n){
+            background: #222222;
+        }
+    }
+}
