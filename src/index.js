@@ -50,6 +50,11 @@ window.addEventListener("DOMContentLoaded", function (e) {
         rewind: false,
     }).mount()
 
-
+    new Glide('.glide-4', {
+        type: 'carusel',
+        startAt: 0,
+        gap:  30,
+        perView: 6,
+    }).mount()
 })
 

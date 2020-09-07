@@ -35,6 +35,16 @@
     content-visibility: auto;
     contain-intrinsic-size: 100%;
     
+    
+    .fixed-content{
+        pointer-events: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 12;
+    }
     .content {
         overflow-y: auto;
         overflow-x: hidden;
@@ -43,6 +53,7 @@
         right: 0;
         width: 100%;
         height: calc(100vh - 11em);
+        z-index: 11;
         
         & > div {
             padding-top: 2em;
@@ -383,6 +394,92 @@
 
 
 .slide-6 {
+    .fixed-content {
+        
+        
+        .partners {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            
+            button:hover + .contents, .contents:hover {
+                opacity: 1;
+                transform: translateX(0);
+                visibility: visible;
+            }
+            
+            .contents {
+                overflow: hidden;
+                border-radius: 15px 0 0 15px;
+                pointer-events: auto;
+                visibility: hidden;
+                transform: translateX(1000px);
+                transition: .6s;
+                opacity: 0;
+                max-width: 1000px;
+                width: 100%;
+                height: 14em;
+                background: #ffffff;
+                position: absolute;
+                top: -4.5em;
+                right: 4em;
+                z-index: 13;
+                box-shadow: 0 0 12px rgba(0, 0, 0, .4);
+                padding: 0 40px;
+                
+                .glide-4 {
+                    height: 100%;
+                    
+                    .glide__track {
+                        height: 100%;
+                    }
+                }
+                
+                .glide__slides {
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+                }
+                
+                .glide__slide {
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: contain;
+                    object-position: center;
+                }
+            }
+            
+            button {
+                pointer-events: auto;
+                cursor: pointer;
+                background: $color-red;
+                text-transform: uppercase;
+                font-size: 1.6em;
+                color: #ffffff;
+                transform: rotate(-90deg);
+                border: none;
+                height: 3em;
+                width: 9em;
+                padding: 1em;
+                position: absolute;
+                right: -3em;
+                border-radius: 15px 15px 0 0;
+                font-weight: 700;
+                box-shadow: 0 0 0 8px rgba($color-red, .2);
+                z-index: 14;
+            }
+        }
+    }
+    
     .decor {
         .circle-default-1 {
             position: absolute;

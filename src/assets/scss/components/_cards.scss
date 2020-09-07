@@ -42,3 +42,58 @@
         }
     }
 }
+
+
+.cards-2{
+    ._item{
+        background: #fff;
+        box-shadow: 0 0 12px rgba(0,0,0,.3);
+        border-radius: 4px;
+        .__wrapper{
+            padding: 2em;
+            text-align: center;
+            max-height: 100%;
+            .___title{
+                margin-bottom: 1em;
+                p{
+                    font-weight: 900;
+                    font-size: 2em;
+                }
+                img{
+                    max-width: 70%;
+                }
+            }
+            .___img{
+                img{
+                    max-width: 85%;
+                }
+                margin-bottom: 1em;
+            }
+            .___price{
+                .price{
+                
+                }
+                .count{
+                
+                }
+                .sale{
+                
+                }
+            }
+            .___description{
+                ul{
+                    li{
+                    
+                    }
+                }
+            }
+            .___footer-btn{
+                position: relative;
+                .btn{
+                    position: absolute;
+                    top: 3em;
+                }
+            }
+        }
+    }
+}
