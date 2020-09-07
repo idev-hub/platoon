@@ -1,0 +1,36 @@
+table {
+    background: rgba(#372a2b, .9);
+    border: 1px solid $color-red;
+    height: 100%;
+    width: 100%;
+    
+    tr {
+        th {
+            text-align: left;
+            padding: 15px 20px;
+            font-size: 2em;
+        }
+        
+        td {
+            padding: 8px 20px;
+            border-bottom: 1px solid $color-red;
+            border-top: 1px solid $color-red
+        }
+        
+        &:nth-child(2n) {
+            td {
+                background-color: rgba(#463c3d, .9);
+            }
+        }
+    }
+    
+    &.alternating {
+        tr{
+            &:nth-child(2n) {
+                td {
+                    background: $color-red !important;
+                }
+            }
+        }
+    }
+}

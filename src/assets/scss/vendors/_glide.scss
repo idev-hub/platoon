@@ -1,5 +1,11 @@
 .glide__bullets{
-    margin-top: 1em;
+    margin-top: 2em;
+    
+    &.center{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .glide__bullet{
         background: $color-red;
         opacity: .5;

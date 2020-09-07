@@ -39,6 +39,7 @@
         "webpack-md5-hash": "^0.0.6"
     },
     "dependencies": {
-        "@glidejs/glide": "^3.4.1"
+        "@glidejs/glide": "^3.4.1",
+        "micromodal": "^0.4.6"
     }
 }

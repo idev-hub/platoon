@@ -1,0 +1,44 @@
+.cards {
+    ._item {
+        .__wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            .___img {
+                width: 150px;
+                height: 150px;
+                background-color: #eeeeee;
+                background-color: rgba($color-red, .1);
+                border: 1px solid $color-red;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+                margin-bottom: 2em;
+            }
+            .___description{
+                margin: 2em 0;
+                text-align: center;
+            }
+            .___title{
+                text-align: center;
+                small{
+                    display: block;
+                    font-size: .5em;
+                    font-weight: 100;
+                }
+                *{
+                    font-weight: 700;
+                    font-size: 2em;
+                }
+            }
+            .___footer{
+                a{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

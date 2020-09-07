@@ -14,9 +14,12 @@
 @import "components/slider";
 @import "components/buttons";
 @import "components/lists";
+@import "components/table";
+@import "components/cards";
 @import "components/scroll-container";
 
 @import "components/advantages";
 
 @import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
 @import "vendors/glide";
+@import "vendors/micromodal";
