@@ -1,0 +1,111 @@
+@font-face {
+    font-family: "icomoon";
+    src: url("../../fonts/icomoon.eot?it3vyc");
+    src: url("../../fonts/icomoon.eot?it3vyc#iefix") format("embedded-opentype"),
+    url("../../fonts/icomoon.ttf?it3vyc") format("truetype"),
+    url("../../fonts/icomoon.woff?it3vyc") format("woff"),
+    url("../../fonts/icomoon.svg?it3vyc#icomoon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+.big{
+    font-size: 2.4em;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: "icomoon", sans-serif !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    text-decoration: none !important;
+    
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    &:before {
+        font-family: "icomoon", sans-serif !important;
+        text-decoration: none !important;
+    }
+}
+
+.icon-rub:before {
+    content: "\e900";
+}
+
+.icon-thread:before {
+    content: "\e901";
+}
+
+.icon-prev:before {
+    content: "\e902";
+}
+
+.icon-russia:before {
+    content: "\e903";
+}
+
+.icon-phone:before {
+    content: "\e904";
+}
+
+.icon-download:before {
+    content: "\e905";
+}
+
+.icon-next:before {
+    content: "\e906";
+}
+
+.icon-house:before {
+    content: "\e907";
+}
+
+.icon-download-2:before {
+    content: "\e908";
+}
+
+.icon-accept:before {
+    content: "\e909";
+}
+
+.icon-dollar:before {
+    content: "\e90a";
+}
+
+.icon-energy:before {
+    content: "\e90b";
+}
+
+.icon-foam:before {
+    content: "\e90c";
+}
+
+.icon-eye:before {
+    content: "\e90d";
+}
+
+.icon-banner:before {
+    content: "\e90e";
+}
+
+.icon-hammer:before {
+    content: "\e90f";
+}
+
+.icon-corrosive:before {
+    content: "\e910";
+}
+
+.icon-spray:before {
+    content: "\e911";
+}
+
+.icon-weight:before {
+    content: "\e912";
+}

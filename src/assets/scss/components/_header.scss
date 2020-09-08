@@ -1,40 +1,46 @@
 #app {
-    &.white-theme{
-        color: #fff;
+    &.white-theme {
+        color: #ffffff;
+        
         &.slide-switched {
             #header-page {
                 top: 0;
-                color: #000;
-                .logo{
+                color: #000000;
+                
+                .logo {
                     background-image: url("../../images/logo-inverse.png");
                 }
             }
         }
     }
     
-    &.black-theme{
-        color: #000;
+    &.black-theme {
+        color: #000000;
+        
         &.slide-switched {
-            color: #fff;
+            color: #ffffff;
+            
             #header-page {
                 top: 0;
-                .logo{
+                
+                .logo {
                     background-image: url("../../images/logo.png");
                 }
             }
         }
     }
     
-    &.scrolling-slide.slide-switched{
-        &.black-theme{
-            #header-page{
-                background-color: #111;
+    &.scrolling-slide.slide-switched {
+        &.black-theme {
+            #header-page {
+                background-color: #111111;
                 box-shadow: 0 12px 12px rgba(0, 0, 0, .1);
             }
         }
-        &.white-theme{
-            #header-page{
-                background-color: #fff;
+        
+        &.white-theme {
+            #header-page {
+                background-color: #ffffff;
                 box-shadow: 0 12px 12px rgba(0, 0, 0, .1);
             }
         }
@@ -62,22 +68,37 @@
             background-image: url("../../images/logo.png");
             transition: .3s;
         }
-        .phone{
+        
+        .icon-phone {
+            background: linear-gradient(180deg, #e02a2a, #901414);
+            color: #ffffff;
+            font-size: 1.5em;
+            margin-right: .5em;
+            padding: .6em;
+            border-radius: 50%;
+        }
+        
+        .phone {
             margin-right: 2em;
-            a{
+            display: flex;
+            align-items: center;
+            
+            a {
                 color: inherit;
                 font-size: 1.2em;
             }
         }
+        
         .address {
             margin-left: 1em;
             
             ul {
                 li {
-                    &:not(:last-child){
+                    &:not(:last-child) {
                         margin-bottom: 1em;
                     }
-                    span{
+                    
+                    span {
                         font-weight: 100;
                     }
                 }

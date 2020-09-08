@@ -36,7 +36,7 @@
     contain-intrinsic-size: 100%;
     
     
-    .fixed-content{
+    .fixed-content {
         pointer-events: none;
         position: fixed;
         left: 0;
@@ -45,15 +45,17 @@
         width: 100%;
         z-index: 12;
     }
+    
     .content {
         overflow-y: auto;
         overflow-x: hidden;
         position: absolute;
-        top: 11em;
+        top: 0;
         right: 0;
         width: 100%;
-        height: calc(100vh - 11em);
+        height: 100%;
         z-index: 11;
+        padding-top: 11em;
         
         & > div {
             padding-top: 2em;
@@ -65,6 +67,11 @@
             transition: transform 1.5s;
             transform: translateX(600px);
         }
+    }
+    
+    .main-content {
+        z-index: 2;
+        position: relative;
     }
     
     .decor {
@@ -134,7 +141,54 @@
         }
     }
     
-    &.slide[data-app-custom-class="black-theme"] {
+    &.before-slide {
+        display: block;
+        
+        &.before-slide-direction-up {
+            transition: 0s;
+            z-index: 12;
+            transform: translateX(-100%);
+        }
+        
+        z-index: 12;
+        transform: translateX(-100%);
+    }
+    
+    &.current-slide {
+        display: block;
+        z-index: 11;
+        transform: translateX(0%);
+        
+        .content {
+            & > div {
+                transform: translateX(0);
+            }
+        }
+        
+        &.appeared-slide {
+            .decor {
+                .nav-circle {
+                    transform: scale(1.15);
+                }
+            }
+            
+            .bg-image {
+                .inside {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+    
+    &.after-slide {
+        display: block;
+        z-index: 10;
+        transform: translateX(400px);
+    }
+    
+    
+    &[data-app-custom-class="black-theme"] {
+        background-color: #222222;
         
         .content {
             color: #ffffff;
@@ -178,7 +232,8 @@
         
     }
     
-    &.slide[data-app-custom-class="white-theme"] {
+    &[data-app-custom-class="white-theme"] {
+        background-color: #ffffff;
         
         .content {
             color: #000000;
@@ -224,51 +279,6 @@
                 background: linear-gradient(90deg, rgba(#fff, .21), rgba(#971616, 0));
             }
         }
-    }
-    
-    &.before-slide {
-        display: block;
-        
-        &.before-slide-direction-up {
-            transition: 0s;
-            z-index: 12;
-            transform: translateX(-100%);
-        }
-        
-        z-index: 12;
-        transform: translateX(-100%);
-    }
-    
-    &.current-slide {
-        display: block;
-        z-index: 11;
-        transform: translateX(0%);
-        
-        .content {
-            & > div {
-                transform: translateX(0);
-            }
-        }
-        
-        &.appeared-slide {
-            .decor {
-                .nav-circle {
-                    transform: scale(1.15);
-                }
-            }
-            
-            .bg-image {
-                .inside {
-                    transform: scale(1);
-                }
-            }
-        }
-    }
-    
-    &.after-slide {
-        display: block;
-        z-index: 10;
-        transform: translateX(400px);
     }
 }
 
@@ -352,6 +362,14 @@
     }
 }
 
+.slide-5 {
+    .link {
+        .icon {
+            color: rgba($color-red, .5);
+        }
+    }
+}
+
 .slide-3, .slide-5 {
     .decor {
         .circle-default-1 {
@@ -394,11 +412,24 @@
 
 
 .slide-6 {
-    .fixed-content {
+    .adress {
+        p {
+            span {
+                a {
+                    font-weight: 100;
+                }
+                
+                font-weight: 100;
+            }
+        }
         
+    }
+    
+    .fixed-content {
+        z-index: 100 !important;
         
         .partners {
-            position: absolute;
+            position: fixed;
             right: 0;
             top: 50%;
             transform: translateY(-50%);
@@ -524,3 +555,5 @@
     cursor: pointer;
     user-select: none;
 }
+
+

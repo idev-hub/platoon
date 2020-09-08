@@ -6,7 +6,26 @@ body {
     font-family: "Museo Sans", "Proxima Nova", serif;
 }
 
-img{
+
+@media (min-width: 1300px) {
+    html, body{
+        font-size: calc(4px + 10 * (100vw / 1920));
+    }
+}
+
+@media (min-width: 1000px) {
+    html, body{
+        font-size: calc(3px + 10 * (100vw / 1920));
+    }
+}
+
+@media (max-width: 768px) {
+    html, body{
+    }
+}
+
+
+img {
     max-width: 100%;
     user-select: none;
     max-height: 100%;
@@ -20,8 +39,8 @@ img{
     color: $color-red;
 }
 
-.color-gray{
-    color: #222;
+.color-gray {
+    color: #222222;
 }
 
 .text-uppercase {
@@ -45,13 +64,212 @@ img{
 }
 
 
-.shadow{
-    box-shadow: 0 0 12px rgba(0,0,0,.1);
+.shadow {
+    box-shadow: 0 0 12px rgba(0, 0, 0, .1);
 }
 
-#map{
-    background: #fff;
+#map {
+    background: #ffffff;
     width: 100%;
     height: 350px;
-    border: 1px solid #222;
+    border: 1px solid #222222;
+}
+
+
+.detail {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+    ._wraper {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+        
+        .dot {
+            cursor: pointer;
+            position: absolute;
+            z-index: 4;
+            
+            &.dot-1 {
+                top: 0;
+                left: 50px;
+                z-index: 5;
+            }
+            
+            &.dot-2 {
+                top: 0;
+                right: 0;
+            }
+            
+            &.dot-3 {
+                top: 100px;
+                right: 0;
+            }
+            
+            &.dot-4 {
+                bottom: 0;
+                right: 0;
+            }
+            
+            &.dot-5 {
+                bottom: 0;
+                left: 0;
+            }
+            
+            .hover {
+                .title {
+                    p {
+                        color: $color-red;
+                        font-weight: 900;
+                        font-size: 1.1em;
+                    }
+                }
+                
+                .description {
+                    margin-top: .4em;
+                }
+                
+                width: 280px;
+                position: absolute;
+                visibility: hidden;
+                transition: .3s;
+                opacity: 0;
+                bottom: calc(100% + 25px);
+                left: -125px;
+                background: rgba(#333, .8);
+                border-radius: 1em;
+                z-index: 10;
+                padding: 1em 1em 1em 20px;
+                
+                &:after {
+                    content: "";
+                    position: absolute;
+                    height: 80%;
+                    border-radius: 5em;
+                    width: 4px;
+                    background: $color-red;
+                    left: 10px;
+                    top: 10%;
+                }
+            }
+            
+            &:hover {
+                .hover {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+            
+            &:before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 20px;
+                height: 20px;
+                background: rgba($color-red, 1);
+                border: 1px solid $color-red;
+                z-index: -2;
+                border-radius: 50%;
+                animation: scales 4s ease-in-out infinite alternate-reverse;
+                transform-origin: top left;
+            }
+            
+            &:after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 30px;
+                height: 30px;
+                background: rgba($color-red, .1);
+                border: 1px solid $color-red;
+                z-index: -1;
+                border-radius: 50%;
+                animation: scales 2s ease-in-out infinite;
+                transform-origin: top left;
+            }
+        }
+        
+        &:before {
+            pointer-events: none;
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background: rgba($color-red, .4);
+            border: 1px solid $color-red;
+            z-index: -1;
+            border-radius: 50%;
+            animation: scales2 9s ease-in-out infinite alternate-reverse;
+            transform-origin: top left;
+        }
+        
+        &:after {
+            pointer-events: none;
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 450px;
+            height: 450px;
+            background: rgba($color-red, .1);
+            border: 1px solid $color-red;
+            z-index: -1;
+            border-radius: 50%;
+            box-shadow: 0 0 50px rgba($color-red, .4);
+            animation: scales2 6s ease-in-out infinite;
+            transform-origin: top left;
+        }
+        
+        img {
+            transform: scale(1.5);
+            position: relative;
+        }
+    }
+}
+
+@keyframes scales2 {
+    0%{
+        transform: scale(1) translate(-50%, -50%);
+    }
+    50%{
+        transform: scale(1.1) translate(-50%, -50%);
+    }
+    100%{
+        transform: scale(1) translate(-50%, -50%);
+    }
+}
+
+@keyframes scales {
+    0%{
+        transform: scale(1) translate(-50%, -50%);
+    }
+    50%{
+        transform: scale(1.2) translate(-50%, -50%);
+    }
+    100%{
+        transform: scale(1) translate(-50%, -50%);
+    }
+}
+
+
+input{
+    &[type="text"], &[type="email"], &[type="tel"], &[type="number"]{
+        padding: 1em 2em;
+        border: none;
+        border-radius: 4px;
+    }
+    &[type="submit"]{
+        cursor: pointer;
+    }
 }

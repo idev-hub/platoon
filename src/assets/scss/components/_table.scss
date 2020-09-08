@@ -7,14 +7,16 @@ table {
     tr {
         th {
             text-align: left;
-            padding: 15px 20px;
-            font-size: 2em;
+            padding: 1em 20px;
+            font-size: 1.4em;
+            text-transform: uppercase;
         }
         
         td {
-            padding: 8px 20px;
+            padding: .6em 20px;
             border-bottom: 1px solid $color-red;
-            border-top: 1px solid $color-red
+            border-top: 1px solid $color-red;
+            vertical-align: center;
         }
         
         &:nth-child(2n) {
