@@ -2,6 +2,13 @@
   Basic Modal Styles
 \**************************/
 
+
+#modal-1, #modal-2 {
+    .modal__overlay {
+        z-index: 999;
+    }
+}
+
 .modal__overlay {
     position: fixed;
     top: 0;
@@ -12,27 +19,32 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999;
+    z-index: 900;
 }
 
-.modal__title{
+.modal__title {
     text-align: center;
     font-size: 2.5em;
     font-weight: 900;
     margin-bottom: .5em !important;
-    span{
+    
+    &.text-left {
+        text-align: left;
+    }
+    
+    span {
         font-weight: 900;
     }
 }
 
-.modal__footer{
+.modal__footer {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 2em;
 }
 
-.modal__content{
+.modal__content {
     text-align: center;
 }
 
@@ -41,14 +53,31 @@
     width: 100%;
     max-height: 100vh;
     border-radius: 0;
-    overflow-y: auto;
+    overflow: auto;
     box-sizing: border-box;
-    color: #fff;
+    color: #ffffff;
+}
+
+.modal__header {
+    position: relative;
+    overflow: visible;
 }
 
 .modal__close {
     background: transparent;
-    border: 0;
+    position: absolute;
+    right: 0;
+    top: 0px;
+    border-radius: 50%;
+    padding: 1em;
+    border: 1px solid #ffffff;
+    width: 25px;
+    height: 25px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
 }
 
 .modal__header .modal__close:before {
