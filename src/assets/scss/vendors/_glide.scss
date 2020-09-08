@@ -6,6 +6,12 @@
         align-items: center;
         justify-content: center;
     }
+    
+    @media (max-width: 768px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .glide__bullet{
         background: $color-red;
         opacity: .5;
@@ -16,10 +22,13 @@
         cursor: pointer;
         border: .2em solid $color-red;
         transition: .3s;
+        margin-bottom: 2em;
         
         &:not(:last-child){
             margin-right: .5em;
         }
+    
+       
         
         &.glide__bullet--active{
             opacity: 1;

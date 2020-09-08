@@ -60,6 +60,10 @@
     justify-content: flex-start;
     transition: left .5s;
     
+    @media (max-width: 768px) {
+        display: none;
+    }
+    
     .aside-nav {
         display: flex;
         flex-direction: column;

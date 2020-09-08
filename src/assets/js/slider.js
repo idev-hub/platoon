@@ -46,18 +46,19 @@ export default class Slider {
         let isURLLoad = false
         let mainSlide = undefined
         const app = document.getElementById("app")
+        let windowWidth = window.innerWidth
 
         const slideToLinks = app.getElementsByClassName("slideTo")
         for (let i = 0; i < slideToLinks.length; i++) {
             const link = slideToLinks[i]
-            link.addEventListener("click", function (e){
+            link.addEventListener("click", function (e) {
                 e.preventDefault()
                 const toSlideData = e.target.getAttribute("data-slide")
-                if(toSlideData){
-                    if(parseInt(toSlideData) !== self.current) self.toSlide(parseInt(toSlideData), 0, true)
-                } else if(e.target.getAttribute("href")){
-                    let index = self.slides.findIndex((s) => "#"+s.id === e.target.getAttribute("href"))
-                    if(index !== -1 && index !== self.current) self.toSlide(index, 0, true)
+                if (toSlideData) {
+                    if (parseInt(toSlideData) !== self.current) self.toSlide(parseInt(toSlideData), 0, true)
+                } else if (e.target.getAttribute("href")) {
+                    let index = self.slides.findIndex((s) => "#" + s.id === e.target.getAttribute("href"))
+                    if (index !== -1 && index !== self.current) self.toSlide(index, 0, true)
                 }
             })
         }
@@ -66,12 +67,12 @@ export default class Slider {
         for (let i = 0; i < this.length; i++) {
             const slide = this.slides[i]
 
-            if(window.location.hash === "#"+slide.id){
+            if (window.location.hash === "#" + slide.id) {
                 isURLLoad = true
                 this.current = i
             }
 
-            if(slide.main !== undefined) mainSlide = i
+            if (slide.main !== undefined) mainSlide = i
 
             const content = slide.container.getElementsByClassName("content")[0]
             let scrollToggle = content.scrollHeight === content.offsetHeight
@@ -102,29 +103,27 @@ export default class Slider {
             let ts
             slide.container.addEventListener('touchstart', function (e) {
                 if (!isTouch) {
-                    ts = e.touches[0].clientY
+                    // ts = e.touches[0].clientY
                 }
             })
 
             slide.container.addEventListener('touchmove', function (e) {
                 let te = e.changedTouches[0].clientY
-                if (!isTouch) {
-                    if (ts > te) {
-                        if (allowBefore) before()
-                    } else {
-                        if (allowAfter) after()
-                    }
-                    isTouch = true
-                    setTimeout(function () {
-                        isTouch = false
-                    }, 1000)
-                }
+                // if (!isTouch) {
+                //     if (ts > te) {
+                //         if (allowBefore) before()
+                //     } else {
+                //         if (allowAfter) after()
+                //     }
+                //     isTouch = true
+                //     setTimeout(function () {
+                //         isTouch = false
+                //     }, 1000)
+                // }
             })
 
 
-
             slide.container.addEventListener("wheel", function (e) {
-                console.log(find(e.target, 'scroll-container') === null)
                 if (!isTouch && find(e.target, 'scroll-container') === null) {
                     if (!this.block) {
                         if (e.deltaY < 0) {
@@ -149,7 +148,7 @@ export default class Slider {
             }
         }
 
-        if(!isURLLoad && mainSlide) this.current = mainSlide
+        if (!isURLLoad && mainSlide) this.current = mainSlide
         this.toSlide(this.current, 0, false)
         this.block = false
     }
@@ -179,7 +178,7 @@ export default class Slider {
         const asideLinks = aside.getElementsByClassName("slideTo")
         for (let i = 0; i < asideLinks.length; i++) {
             const link = asideLinks[i]
-            if (link.getAttribute("href") === "#"+slide.id) {
+            if (link.getAttribute("href") === "#" + slide.id) {
                 link.classList.add("current")
             } else {
                 if (link.classList.contains("current")) link.classList.remove("current")
@@ -202,7 +201,7 @@ export default class Slider {
             const slide = this.slides[this.current]
             current.classList.add("current-slide")
 
-            if (!anim){
+            if (!anim) {
                 current.classList.add("no-animation")
             }
 
@@ -212,7 +211,7 @@ export default class Slider {
                 app.classList.remove("scrolling-slide")
             }
             if (slide.id) {
-                history.pushState({page: self.current}, slide.title || null, "#"+slide.id)
+                history.pushState({page: self.current}, slide.title || null, "#" + slide.id)
             }
 
             if (current.getAttribute("data-app-custom-class")) app.classList.add(current.getAttribute("data-app-custom-class"))
@@ -226,7 +225,7 @@ export default class Slider {
                     before.classList.add("before-slide-direction-down")
                 }
 
-                if (!anim){
+                if (!anim) {
                     before.classList.add("no-animation")
                 }
             }
@@ -239,7 +238,7 @@ export default class Slider {
                     after.classList.add("after-slide-direction-down")
                 }
 
-                if (!anim){
+                if (!anim) {
                     after.classList.add("no-animation")
                 }
             }

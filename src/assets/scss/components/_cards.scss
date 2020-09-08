@@ -1,6 +1,8 @@
 .cards {
     ._item {
-        
+        @media (max-width: 768px) {
+            margin-bottom: 2em;
+        }
         padding: 0 1em;
         
         &:not(:last-child){
@@ -60,10 +62,25 @@
 
 
 .cards-2{
+    
+    @media (max-width: 768px) {
+        &>.grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-rows: auto;
+            grid-gap: 2em;
+        }
+        
+    }
+    
     ._item{
         background: #fff;
         box-shadow: 0 0 12px rgba(0,0,0,.2);
         border-radius: 4px;
+    
+        @media (max-width: 768px) {
+            margin-bottom: 3em;
+        }
         .__wrapper{
             padding: 2em;
             text-align: center;
@@ -125,6 +142,8 @@
                 .btn{
                     position: absolute;
                     top: 0;
+                    left: 50%;
+                    transform: translate(-50%);
                 }
             }
         }

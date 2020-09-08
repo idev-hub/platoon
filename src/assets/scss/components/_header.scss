@@ -56,8 +56,29 @@
     height: 10em;
     transition: top .5s;
     
+    @media (max-width: 768px) {
+        height: 6em;
+    }
+    
+    @media (max-width: 768px) {
+        display: block;
+        position: fixed;
+        top: 0;
+        background: #222222;
+    }
+    
     .container {
         height: 100%;
+    
+        @media (max-width: 768px) {
+            display: flex;
+            align-items: center;
+            &>.grid{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
         
         .logo {
             max-width: 10em;
@@ -67,6 +88,11 @@
             background-position: center;
             background-image: url("../../images/logo.png");
             transition: .3s;
+    
+            @media (max-width: 768px) {
+                width: 10em;
+                height: 8em;
+            }
         }
         
         .icon-phone {
@@ -78,10 +104,24 @@
             border-radius: 50%;
         }
         
+        .btn{
+            @media (max-width: 768px) {
+                width: auto;
+                max-width: 100%;
+                padding: 0 1em;
+                font-size: 1em;
+                margin-left: 1em;
+            }
+        }
+        
         .phone {
             margin-right: 2em;
             display: flex;
             align-items: center;
+    
+            @media (max-width: 768px) {
+                display: none;
+            }
             
             a {
                 color: inherit;
@@ -90,6 +130,9 @@
         }
         
         .address {
+            @media (max-width: 768px) {
+                display: none;
+            }
             margin-left: 1em;
             
             ul {

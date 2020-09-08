@@ -20,17 +20,11 @@ window.addEventListener("DOMContentLoaded", function (e) {
     const myLazyLoad = new LazyLoad()
     myLazyLoad.update()
 
-    const slidesContainer = document.getElementById("slide-page")
-    const slider = new Slider(slidesContainer, 'slide')
+    if(window.innerWidth >= 787){
+        const slidesContainer = document.getElementById("slide-page")
+        const slider = new Slider(slidesContainer, 'slide')
+    }
 
-    new Glide('.glide', {
-        type: 'slider',
-        startAt: 0,
-        gap: 10,
-        perView: 3,
-        bound: false,
-        rewind: false,
-    }).mount()
 
     new Glide('.glide-2', {
         type: 'slider',
@@ -56,5 +50,25 @@ window.addEventListener("DOMContentLoaded", function (e) {
         gap:  30,
         perView: 6,
     }).mount()
+
+    if(window.innerWidth >= 787){
+        new Glide('.glide', {
+            type: 'slider',
+            startAt: 0,
+            gap: 10,
+            perView: 3,
+            bound: false,
+            rewind: false,
+        }).mount()
+    } else {
+        new Glide('.glide', {
+            type: 'slider',
+            startAt: 0,
+            gap: 10,
+            perView: 1,
+            bound: false,
+            rewind: false,
+        }).mount()
+    }
 })
 
