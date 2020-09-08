@@ -3,6 +3,9 @@ html, body {
     width: 100%;
     font-size: calc(4px + 10 * (100vw / 1920));
     font-family: "Museo Sans", "Proxima Nova", serif;
+    @media (min-width: 767px) {
+        overflow: hidden;
+    }
 }
 
 #app {
@@ -59,13 +62,13 @@ img {
     border: 1px solid #222222;
 }
 
-label{
+label {
     @media (max-width: 768px) {
         margin: 0 !important;
     }
 }
 
-select{
+select {
     padding: 1em 2em;
     border: none;
     border-radius: 4px;
@@ -81,7 +84,7 @@ input {
         padding: 1em 2em;
         border: none;
         border-radius: 4px;
-    
+        
         @media (max-width: 768px) {
             margin: 0 0 1.5em 0;
             width: 100%;
@@ -94,20 +97,22 @@ input {
 }
 
 
-.gallary{
-    ._main{
+.gallary {
+    ._main {
         max-height: 400px;
-        img{
+        
+        img {
             object-fit: cover;
         }
     }
-    ._imgs{
+    
+    ._imgs {
         margin-top: 1em;
         display: grid;
         grid-template-columns: repeat(auto-fit, 50px);
         grid-gap: 1em;
         
-        img{
+        img {
             cursor: pointer;
             height: 50px;
             object-fit: cover;
@@ -116,12 +121,13 @@ input {
 }
 
 
-.catalog{
-    .modal-content{
+.catalog {
+    .modal-content {
         display: none;
     }
-    .___title{
-        *{
+    
+    .___title {
+        * {
             font-weight: 900;
             font-size: 1.2em;
             margin-bottom: .3em;
@@ -130,7 +136,7 @@ input {
 }
 
 @media (max-width: 768px) {
-    .mobile-reverse{
+    .mobile-reverse {
         display: flex;
         flex-direction: column-reverse;
     }
@@ -149,21 +155,24 @@ input {
     }
     .footer {
         padding-top: 2em;
+        
         p {
             text-align: left;
             margin: 1em 0;
             line-height: 1.5em;
         }
+        
         .inst {
             justify-content: center;
             display: flex;
             align-items: center;
             margin: 2em 0;
             
-            p{
+            p {
                 margin: .5em 0;
                 
             }
+            
             .icon {
                 margin-left: 0;
                 margin-right: 1em;

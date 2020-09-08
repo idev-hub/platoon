@@ -67,21 +67,23 @@
     background: transparent;
     position: absolute;
     right: 0;
-    top: 0px;
+    top: 0;
     border-radius: 50%;
     padding: 1em;
     border: 1px solid #ffffff;
     width: 25px;
     height: 25px;
     color: #ffffff;
+    z-index: 999;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 999;
 }
 
 .modal__header .modal__close:before {
     content: "\2715";
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 
