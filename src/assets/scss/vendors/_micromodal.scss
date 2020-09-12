@@ -2,6 +2,134 @@
   Basic Modal Styles
 \**************************/
 
+.modal{
+    .modal__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 900;
+    }
+    
+    
+    &.small{
+        
+        button{
+            margin: auto;
+        }
+        
+        .h3{
+            font-size: 2em;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 900;
+            position: relative;
+            display: table;
+            margin: 0 auto 20px auto;
+            
+            &:before{
+                content: "";
+                position: absolute;
+                width: 80%;
+                height: 3px;
+                background-color: $color-red;
+                border-radius: 3px;
+                bottom: -5px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        p{
+            font-size: 1.5em;
+            line-height: 1.7em;
+        }
+        ol{
+            font-size: 1.6em;
+            text-align: center;
+            counter-reset: ol;
+            li{
+                display: table;
+                margin-bottom: 10px;
+                &::before {
+                    counter-increment: ol;
+                    content: counter(ol) ")";
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+    
+    .modal__title {
+        text-align: center;
+        font-size: 2.5em;
+        font-weight: 900;
+        margin-bottom: .5em !important;
+        
+        &.text-left {
+            text-align: left;
+        }
+        
+        span {
+            font-weight: 900;
+        }
+    }
+    
+    .modal__footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2em;
+    }
+    
+    .modal__content {
+        text-align: center;
+    }
+    
+    .modal__container {
+        padding: 30px;
+        width: 100%;
+        max-height: 100vh;
+        border-radius: 0;
+        overflow: auto;
+        box-sizing: border-box;
+        color: #ffffff;
+    }
+    
+    .modal__header {
+        position: relative;
+        overflow: visible;
+    }
+    
+    .modal__close {
+        cursor: pointer;
+        background: transparent;
+        position: absolute;
+        right: 0;
+        top: 0;
+        border-radius: 50%;
+        padding: 1em;
+        border: 1px solid #ffffff;
+        width: 25px;
+        height: 25px;
+        color: #ffffff;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .modal__header .modal__close:before {
+        content: "\2715";
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
+
 
 #modal-1, #modal-2 {
     .modal__overlay {
@@ -9,81 +137,10 @@
     }
 }
 
-.modal__overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 900;
-}
-
-.modal__title {
-    text-align: center;
-    font-size: 2.5em;
-    font-weight: 900;
-    margin-bottom: .5em !important;
-    
-    &.text-left {
-        text-align: left;
+#modal-6, #modal-5{
+    .modal__overlay {
+        z-index: 1001;
     }
-    
-    span {
-        font-weight: 900;
-    }
-}
-
-.modal__footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2em;
-}
-
-.modal__content {
-    text-align: center;
-}
-
-.modal__container {
-    padding: 30px;
-    width: 100%;
-    max-height: 100vh;
-    border-radius: 0;
-    overflow: auto;
-    box-sizing: border-box;
-    color: #ffffff;
-}
-
-.modal__header {
-    position: relative;
-    overflow: visible;
-}
-
-.modal__close {
-    background: transparent;
-    position: absolute;
-    right: 0;
-    top: 0;
-    border-radius: 50%;
-    padding: 1em;
-    border: 1px solid #ffffff;
-    width: 25px;
-    height: 25px;
-    color: #ffffff;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.modal__header .modal__close:before {
-    content: "\2715";
-    margin: 0 !important;
-    padding: 0 !important;
 }
 
 

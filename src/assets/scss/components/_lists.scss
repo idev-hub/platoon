@@ -15,6 +15,10 @@
         position: relative;
         overflow: hidden;
         
+        cursor: pointer;
+        user-select: none;
+        transition: .3s;
+        
         &:before{
             content: '';
             position: absolute;
@@ -26,7 +30,7 @@
             border-radius: 50%;
         }
         
-        &:nth-child(2n){
+        &.current{
             background: #222222;
         }
     }

@@ -8,7 +8,9 @@
         &:not(:last-child){
             border-right: 1px dashed #333;
         }
-        
+        .modal__content{
+            display: none;
+        }
         .__wrapper {
             display: flex;
             align-items: center;
@@ -38,6 +40,7 @@
             .___description{
                 margin: 2em 0;
                 text-align: center;
+                min-height: 70px;
             }
             .___title{
                 text-align: center;

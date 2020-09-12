@@ -352,33 +352,32 @@
             z-index: 5;
             
             .dot {
-                cursor: pointer;
                 position: absolute;
                 z-index: 4;
                 
                 &.dot-1 {
                     top: 0;
-                    left: 50px;
+                    left: -50px;
                     z-index: 5;
                 }
                 
                 &.dot-2 {
-                    top: 0;
+                    top: -50px;
                     right: 0;
                 }
                 
                 &.dot-3 {
                     top: 100px;
-                    right: 0;
+                    right: -50px;
                 }
                 
                 &.dot-4 {
-                    bottom: 0;
-                    right: 0;
+                    bottom: 100px;
+                    right: -70px;
                 }
                 
                 &.dot-5 {
-                    bottom: 0;
+                    bottom: 50px;
                     left: 0;
                 }
                 
@@ -397,9 +396,7 @@
                     
                     width: 280px;
                     position: absolute;
-                    visibility: hidden;
                     transition: .3s;
-                    opacity: 0;
                     bottom: calc(100% + 25px);
                     left: -125px;
                     background: rgba(#333, .8);
@@ -418,13 +415,7 @@
                         top: 10%;
                     }
                 }
-                
-                &:hover {
-                    .hover {
-                        visibility: visible;
-                        opacity: 1;
-                    }
-                }
+
                 
                 &:before {
                     content: "";
@@ -579,7 +570,7 @@
         .placeholder-number {
             user-select: none;
             position: absolute;
-            right: 4.5em;
+            right: 5em;
             top: 1.2em;
             z-index: 10;
             color: #cfcfcf;
@@ -622,7 +613,7 @@
     }
 }
 
-.slide-2,.slide-5{
+.slide-2, .slide-3{
     @media (max-width: 768px) {
         display: none;
     }

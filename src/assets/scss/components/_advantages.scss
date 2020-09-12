@@ -1,6 +1,19 @@
 .advantages {
     ._advantage {
         border: 1px solid $color-red;
+        position: relative;
+        
+        &:hover{
+            ._hidden{
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        
+        .modal__content {
+            display: none;
+        }
+        
         .__wrpapper {
             height: 16em;
             position: relative;
@@ -29,9 +42,10 @@
                 height: 100%;
                 display: flex;
                 justify-content: start;
-                align-items: end;
+                align-items: flex-end;
+                align-content: flex-end;
                 padding: 1em;
-                box-shadow: inset 0 -62px 52px rgba(0,0,0,.9);
+                box-shadow: inset 0 -62px 52px rgba(0, 0, 0, .9), inset 0 62px 52px rgba(0, 0, 0, .6);
                 
                 h1, h2, h3, h4, h5, h6, p {
                     font-weight: 700;

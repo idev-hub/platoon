@@ -122,6 +122,84 @@ input {
 
 
 .catalog {
+    
+    
+    ._item {
+        position: relative;
+        .open {
+            border: 1px solid #ffffff;
+            height: 2.5em;
+            color: #ffffff;
+            background: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: .3s;
+        
+            &:hover {
+                background: #ffffff;
+                color: $color-red;
+            }
+    
+            @media (max-width: 768px) {
+                border-color: $color-red;
+                width: 100%;
+                height: 3em;
+                color: $color-red;
+        
+                &:active {
+                    background: $color-red;
+                    color: #fff;
+                }
+            }
+        }
+        .___img {
+            position: relative;
+        
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: -1;
+                position: relative;
+            }
+        
+            .hover-content {
+                transition: .3s;
+                opacity: 0;
+                visibility: hidden;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba($color-red, .8);
+                color: #ffffff;
+                z-index: 99;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                padding: 1em;
+            
+                p {
+                    font-size: 1.3em;
+                    margin: 0;
+                    padding: 0;
+                
+                    small {
+                        display: block;
+                    }
+                }
+            }
+        }
+        
+        &:hover {
+            .hover-content{
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+        }
+    }
+    
     .modal-content {
         display: none;
     }
@@ -135,7 +213,27 @@ input {
     }
 }
 
+
+
+.only-mobile{
+    display: none;
+}
 @media (max-width: 768px) {
+    .link{
+        display: table;
+        margin: 10px auto;
+    }
+    .only-mobile{
+        display: block;
+    }
+    .mobile-reverse{
+        display: flex !important;
+        flex-direction: column-reverse;
+    }
+    
+    .none-mobile {
+        display: none;
+    }
     .mobile-reverse {
         display: flex;
         flex-direction: column-reverse;
@@ -144,9 +242,6 @@ input {
         ._item {
             margin-bottom: 2em;
             
-            &:not(:first-child) {
-                display: none;
-            }
             
             .___img {
                 margin-bottom: 1em;
@@ -178,5 +273,13 @@ input {
                 margin-right: 1em;
             }
         }
+    }
+}
+
+
+.content-by-index{
+    display: none;
+    &.current{
+        display: block;
     }
 }
