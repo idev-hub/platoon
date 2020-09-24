@@ -130,7 +130,10 @@
             }
             .___description{
                 ul{
+                    margin: auto;
+                    display: table;
                     li{
+                        text-align: left;
                         font-weight: 100;
                         font-size: 1em;
                         font-family: "Museo Sans", "Proxima Nova", Arial, sans-serif;

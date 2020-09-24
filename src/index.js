@@ -18,7 +18,7 @@ window.addEventListener("DOMContentLoaded", function (e) {
                 opens[j].addEventListener("click", function (e) {
                     e.preventDefault();
                     const content = item.getElementsByClassName("modal-content")[0].innerHTML
-
+                    const product = opens[j].getAttribute("data-product")
                     const modal = document.getElementById("modal-3")
                     modal.getElementsByClassName("modal__content")[0].innerHTML = content
 
@@ -34,6 +34,28 @@ window.addEventListener("DOMContentLoaded", function (e) {
                     }
 
                     MicroModal.show("modal-3", {})
+                    console.log(product)
+
+                    const btn = modal.getElementsByClassName("custom-open")
+                    for (let k = 0; k < btn.length; k++) {
+                        const b = btn[k]
+                        b.addEventListener("click", function (e){
+                            e.preventDefault()
+                            MicroModal.show("modal-7", {})
+
+                            const productField = document.getElementById("productName")
+                            const modal7 = document.getElementById("modal-7")
+                            productField.setAttribute("value", product)
+
+                            const cl = modal7.getElementsByClassName("modal__close")
+                            for (let j = 0; j < cl.length; j++) {
+                                cl[j].addEventListener("click", function (e) {
+                                    MicroModal.close("modal-7")
+                                })
+                            }
+                        })
+                    }
+
                     const cl = modal.getElementsByClassName("closes")
                     for (let j = 0; j < cl.length; j++) {
                         cl[j].addEventListener("click", function (e) {
@@ -230,11 +252,13 @@ window.addEventListener("DOMContentLoaded", function (e) {
         const dots = container.getElementsByClassName("glide__bullets")[0]
         if (dots) {
             dots.innerHTML = ""
-            for (let i = 0; i < (slides.length); i++) {
-                let el = document.createElement("button")
-                el.classList.add("glide__bullet")
-                el.setAttribute("data-glide-dir", `=${i}`)
-                dots.append(el)
+            if(parseInt(perView) !== slides.length){
+                for (let i = 0; i < (slides.length); i++) {
+                    let el = document.createElement("button")
+                    el.classList.add("glide__bullet")
+                    el.setAttribute("data-glide-dir", `=${i}`)
+                    dots.append(el)
+                }
             }
         }
     }
