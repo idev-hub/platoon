@@ -87,7 +87,10 @@
     }
     
     .modal__content {
-        text-align: center;
+        h3{
+            text-align: center;
+        }
+        text-align: left;
     }
     
     .modal__container {

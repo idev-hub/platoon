@@ -7,8 +7,9 @@ import Glide from '@glidejs/glide'
 
 window.addEventListener("DOMContentLoaded", function (e) {
 
-    const catalog = document.getElementsByClassName("catalog")[0]
-    if (catalog) {
+    const catalogs = document.getElementsByClassName("catalog")
+    for (let e = 0; e < catalogs.length; e++) {
+        const catalog = catalogs[e]
         const items = catalog.getElementsByClassName("_item")
         for (let i = 0; i < items.length; i++) {
             const item = items[i]
@@ -66,6 +67,7 @@ window.addEventListener("DOMContentLoaded", function (e) {
             }
         }
     }
+
 
     MicroModal.init({
         openTrigger: 'data-custom-open',
@@ -160,18 +162,9 @@ window.addEventListener("DOMContentLoaded", function (e) {
         })
     }
 
-    let gl1, gl2, gl3, gl4
+    let gl1, gl2, gl2mobile, gl3, gl4
 
     if (window.innerWidth >= 787) {
-        gl2 = new Glide('.glide-2', {
-            type: 'slider',
-            startAt: 0,
-            gap: 10,
-            perView: 4,
-            bound: false,
-            rewind: false,
-        })
-    } else {
         gl2 = new Glide('.glide-2', {
             type: 'slider',
             startAt: 0,
@@ -180,10 +173,19 @@ window.addEventListener("DOMContentLoaded", function (e) {
             bound: false,
             rewind: false,
         })
+        document.getElementsByClassName(gl2.selector.split(".")[1])[0].setAttribute("data-perView", gl2.settings.perView)
+    } else {
+        gl2mobile = new Glide('.glide-2mobile', {
+            type: 'slider',
+            startAt: 0,
+            gap: 10,
+            perView: 1,
+            bound: false,
+            rewind: false,
+        })
+        document.getElementsByClassName(gl2mobile.selector.split(".")[1])[0].setAttribute("data-perView", gl2mobile.settings.perView)
     }
 
-
-    document.getElementsByClassName(gl2.selector.split(".")[1])[0].setAttribute("data-perView", gl2.settings.perView)
 
 
     if (window.innerWidth >= 787) {
@@ -253,7 +255,7 @@ window.addEventListener("DOMContentLoaded", function (e) {
         if (dots) {
             dots.innerHTML = ""
             if(parseInt(perView) !== slides.length){
-                for (let i = 0; i < (slides.length); i++) {
+                for (let i = 0; i < (slides.length / perView); i++) {
                     let el = document.createElement("button")
                     el.classList.add("glide__bullet")
                     el.setAttribute("data-glide-dir", `=${i}`)
@@ -264,8 +266,14 @@ window.addEventListener("DOMContentLoaded", function (e) {
     }
 
     gl1.mount()
-    gl2.mount()
+    if (window.innerWidth >= 787) {
+        gl2.mount()
+    } else {
+        gl2mobile.mount()
+    }
+
     gl3.mount()
     gl4.mount()
+
 })
 
