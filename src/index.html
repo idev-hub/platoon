@@ -2816,21 +2816,10 @@
                         <main class="modal__content">
                             <div class="flex align-items-center justify-content-center mb-2">
                                 <label class="mr-1">
-                                    <select id="type_cable" name="type_cable" required>
-                                        <option disabled>Тип кабеля/аксессуара</option>
-                                        <option value="небронированный">небронированный</option>
-                                        <option value="бронированный">бронированный</option>
-                                        <option value="в металорукаве">в металорукаве</option>
-                                        <option value="в трубе">в трубе</option>
-                                        <option value="адаптер резьбы/ниппель">адаптер резьбы/ниппель</option>
-                                        <option value="аксессуар">аксессуар</option>
-                                    </select>
+                                    <select name="type_cable" class="type_cable" title="Тип кабеля/аксессуара" required></select>
                                 </label>
                                 <label class="mr-1">
-                                    <select id="type_input" name="type_input" required>
-                                        <option disabled>Тип ввода/аксессуара</option>
-                                        <option value="ВВКм-А">ВВКм-А</option>
-                                    </select>
+                                    <select class="type_input" name="type_input" title="Тип ввода/аксессуара" required></select>
                                 </label>
                                 <label class="mr-1">
                                     <select id="type_rezba" name="type_rezba" required>
@@ -2838,24 +2827,6 @@
                                         <option value="М16">М16</option>
                                         <option value="М20">М20</option>
                                         <option value="М25">М25</option>
-                                        <option value="М32">М32</option>
-                                        <option value="М40">М40</option>
-                                        <option value="М50">М50</option>
-                                        <option value="М63">М63</option>
-                                        <option value="G 3/8">G 3/8</option>
-                                        <option value="G 1/2">G 1/2</option>
-                                        <option value="G 3/4">G 3/4</option>
-                                        <option value="G 1">G 1</option>
-                                        <option value="G 1 1/4">G 1 1/4</option>
-                                        <option value="G 1 1/2">G 1 1/2</option>
-                                        <option value="G 2">G 2</option>
-                                        <option value="NPT 3/8">NPT 3/8</option>
-                                        <option value="NPT 1/2">NPT 1/2</option>
-                                        <option value="NPT 3/4">NPT 3/4</option>
-                                        <option value="NPT 1">NPT 1</option>
-                                        <option value="NPT 1 1/4">NPT 1 1/4</option>
-                                        <option value="NPT 1 1/2">NPT 1 1/2</option>
-                                        <option value="NPT 2">NPT 2</option>
                                     </select>
                                 </label>
                                 <label>
@@ -2959,44 +2930,19 @@
                         <main class="modal__content">
                             <div class="flex align-items-center justify-content-center mb-2">
                                 <label class="mr-1">
-                                    <select name="type_cable" required>
-                                        <option disabled>Тип кабеля/аксессуара</option>
-                                        <option value="небронированный">небронированный</option>
-                                        <option value="бронированный">бронированный</option>
-                                        <option value="в металорукаве">в металорукаве</option>
-                                        <option value="в трубе">в трубе</option>
-                                        <option value="адаптер резьбы/ниппель">адаптер резьбы/ниппель</option>
-                                        <option value="аксессуар">аксессуар</option>
-                                    </select>
+                                    <select name="type_cable" class="type_cable" title="Тип кабеля/аксессуара" required></select>
                                 </label>
                                 <label class="mr-1">
-                                    <input id="productName" type="text" name="product" placeholder="Тип кабеля/аксессуара"
-                                           required disabled>
+                                    <select class="type_input" name="type_input" title="Тип ввода/аксессуара" required></select>
+                                </label>
+                                <label>
+                                    <input id="productName" type="text" name="product" hidden disabled>
                                 </label>
                                 <label class="mr-1">
-                                    <select name="type_rezba" required>
-                                        <option disabled>Тип резьбы</option>
+                                    <select name="type_rezba" title="Тип резьбы" required>
                                         <option value="М16">М16</option>
                                         <option value="М20">М20</option>
                                         <option value="М25">М25</option>
-                                        <option value="М32">М32</option>
-                                        <option value="М40">М40</option>
-                                        <option value="М50">М50</option>
-                                        <option value="М63">М63</option>
-                                        <option value="G 3/8">G 3/8</option>
-                                        <option value="G 1/2">G 1/2</option>
-                                        <option value="G 3/4">G 3/4</option>
-                                        <option value="G 1">G 1</option>
-                                        <option value="G 1 1/4">G 1 1/4</option>
-                                        <option value="G 1 1/2">G 1 1/2</option>
-                                        <option value="G 2">G 2</option>
-                                        <option value="NPT 3/8">NPT 3/8</option>
-                                        <option value="NPT 1/2">NPT 1/2</option>
-                                        <option value="NPT 3/4">NPT 3/4</option>
-                                        <option value="NPT 1">NPT 1</option>
-                                        <option value="NPT 1 1/4">NPT 1 1/4</option>
-                                        <option value="NPT 1 1/2">NPT 1 1/2</option>
-                                        <option value="NPT 2">NPT 2</option>
                                     </select>
                                 </label>
                                 <label>

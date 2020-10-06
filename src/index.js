@@ -40,7 +40,7 @@ window.addEventListener("DOMContentLoaded", function (e) {
                     const btn = modal.getElementsByClassName("custom-open")
                     for (let k = 0; k < btn.length; k++) {
                         const b = btn[k]
-                        b.addEventListener("click", function (e){
+                        b.addEventListener("click", function (e) {
                             e.preventDefault()
                             MicroModal.show("modal-7", {})
 
@@ -187,7 +187,6 @@ window.addEventListener("DOMContentLoaded", function (e) {
     }
 
 
-
     if (window.innerWidth >= 787) {
         gl3 = new Glide('.glide-3', {
             type: 'slider',
@@ -254,7 +253,7 @@ window.addEventListener("DOMContentLoaded", function (e) {
         const dots = container.getElementsByClassName("glide__bullets")[0]
         if (dots) {
             dots.innerHTML = ""
-            if(parseInt(perView) !== slides.length){
+            if (parseInt(perView) !== slides.length) {
                 for (let i = 0; i < (slides.length / perView); i++) {
                     let el = document.createElement("button")
                     el.classList.add("glide__bullet")
@@ -275,5 +274,81 @@ window.addEventListener("DOMContentLoaded", function (e) {
     gl3.mount()
     gl4.mount()
 
+
+    const types = [
+        {
+            name: "Небронированный",
+            input: ["ВВКм-А", "АВВКм-А", "СВВКм-А"]
+        },
+        {
+            name: "Бронированный",
+            input: ["ВВКм-А", "АВВКм-А", "СВВКм-А"]
+        },
+        {
+            name: "В металорукаве",
+            input: ["ВВКм-А", "АВВКм-А", "СВВКм-А"]
+        },
+        {
+            name: "Заглушка",
+            input: ["AD-Exe", "AD-Exd"]
+        },
+        {
+            name: "Аксессуар",
+            input: ["Кольцо заземления", "Уплотнительное кольцо", "Контргайка"]
+        },
+    ]
+    const typeCable = document.getElementsByClassName("type_cable");
+    const typeInput = document.getElementsByClassName("type_input");
+    let activeType = types[0].name
+
+    function updateInput(){
+        for (let k = 0; k < typeInput.length; k++) {
+            const select = typeInput[k]
+
+            for (let i = 0; i < select.length; i++) {
+                select[i].remove()
+            }
+            select.length = 0
+
+            const type = types.find(f => {
+                return f.name === activeType
+            })
+
+            for (let l = 0; l < type.input.length; l++) {
+                const input = type.input[l]
+                const opt = document.createElement('option')
+
+                opt.value = input
+                opt.innerHTML = input
+                select.appendChild(opt)
+            }
+        }
+    }
+
+    if (typeCable) {
+        for (let i = 0; i < typeCable.length; i++) {
+            const select = typeCable[i]
+            select.innerHTML = ""
+
+            select.addEventListener("change", function (e){
+                activeType = e.target.value
+                updateInput()
+            })
+
+            for (let j = 0; j < types.length; j++) {
+                const type = types[j]
+                const opt = document.createElement('option')
+
+                opt.value = type.name
+                opt.innerHTML = type.name
+
+                select.value = activeType
+                select.appendChild(opt)
+            }
+        }
+        if(typeInput){
+            updateInput()
+        }
+    }
 })
 
